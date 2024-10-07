@@ -18,6 +18,8 @@ public class Ejercicio18AA {
         int tijera = 3;
 
 
+        System.out.println("yes");
+
 
         System.out.println("Piedra, papel o tijera, 1, 2 y... 3");
         System.out.println("0-Piedra");
