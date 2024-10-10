@@ -14,16 +14,13 @@ public class Ejercicio17AA {
 
         String frase = scl.nextLine();
 
-        int i = frase.length();
-        int x = 0;
 
 
-        for ( x = 0 ; i > x ; i--, x++ ) {
-            char letra1 = frase.charAt(x);
-            char letra2 = frase.charAt(i);
-            String frase2 = frase.replace(letra1,letra2);
-            System.out.println(frase2);
+        for (int i = frase.length(); i > 0  ; i--){
+            System.out.print(frase.charAt(i - 1));
+
         }
+
         
 
 
