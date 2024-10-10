@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio7AA {
+public class Ejercicio07AA {
     public static void main(String[] args) {
         /*
         Crea un programa que pida al usuario una temperatura en grados Celsius y la

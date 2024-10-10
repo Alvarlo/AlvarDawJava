@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio6_2AA {
+public class Ejercicio06_2AA {
     public static void main(String[] args) {
         /*
         Crea un programa que pregunte el número de capítulos de la nueva temporada de

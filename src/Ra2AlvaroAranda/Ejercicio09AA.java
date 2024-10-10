@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio9_2AA {
+public class Ejercicio09AA {
     public static void main(String[] args) {
 
         /*
@@ -19,11 +19,9 @@ public class Ejercicio9_2AA {
 
         int num1 = scn.nextInt();
 
-        if (num1==aleatorio){
-            System.out.println("Has acertado");
-        }else{
-            System.out.println("Intentalo de nuevo");
-        }
+        String conclusion = (num1==aleatorio)?"Has acertado":"Intentalo de nuevo";
+
+        System.out.println(conclusion);
 
     }
 }

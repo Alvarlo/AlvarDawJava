@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio1AA {
+public class Ejercicio01AA {
     public static void main(String[] args) {
 
         /* Pide dos números y muestra la suma, resta, multiplicación y división de ambos */

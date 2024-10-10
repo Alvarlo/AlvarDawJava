@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio4AA {
+public class Ejercicio04AA {
     public static void main(String[] args) {
         /*
         Crea un programa que pida un número y diga si es par o impar

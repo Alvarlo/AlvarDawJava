@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio5AA {
+public class Ejercicio05AA {
     public static void main(String[] args) {
 
         /*

@@ -3,7 +3,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio8_3AA {
+public class Ejercicio08_3AA {
     public static void main(String[] args) {
          /*
         Crea un programa que reciba una fecha con el formato DD/MM/AAAA y muestre la
