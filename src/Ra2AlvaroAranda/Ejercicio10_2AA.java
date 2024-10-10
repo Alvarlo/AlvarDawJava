@@ -15,10 +15,10 @@ public class Ejercicio10_2AA {
 
         int num = scn.nextInt();
         String word = scl.nextLine();
-
-        for (int i = 0; i<num ; i++)
-        {
-            System.out.print(word + " ");
+        int i = 0;
+        while (i<num) {
+            System.out.println(word);
+            i++;
         }
 
 
