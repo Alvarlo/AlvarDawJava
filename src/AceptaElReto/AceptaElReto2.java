@@ -17,5 +17,18 @@ Quizá, dentro de muchos años, nosotros seamos los viejos que contemos batallit
 Y eso es lo que vamos a hacer. Escribir un programa que escriba tantos "hola mundo" como nos pidan.
 
          */
+
+        Scanner scn = new Scanner(System.in);
+        int num = scn.nextInt();
+        String frase = "Hola Mundo";
+        int i = 0;
+
+        while (i<num){
+            System.out.println(frase);
+            i++;
+        }
+
+
+
     }
 }
