@@ -22,19 +22,44 @@ public class Ejercicio18AA {
 
 
         System.out.println("Piedra, papel o tijera, 1, 2 y... 3");
-        System.out.println("0-Piedra");
-        System.out.println("1-Papel");
-        System.out.println("2-Tijera");
+        System.out.println("1-Piedra");
+        System.out.println("2-Papel");
+        System.out.println("3-Tijera");
 
 
         int respuesta = scn.nextInt();
 
-        int aleatorio = (int) (Math.random()*3);
+        int aleatorio = (int) (Math.random()*3+1);
 
-        if (respuesta == aleatorio) {
-            System.out.println("Empate! Vuelve a intentarlo");
+        //if (respuesta == aleatorio) {
+            //System.out.println("Empate! Vuelve a intentarlo");
+       // }
+        //String conclusion1 = (respuesta == 1 && aleatorio == 2 && aleatorio !=3) ? "Has perdido!" : " ";
+        //String conclusion2 = (respuesta == 1 && aleatorio == 3 && aleatorio !=2) ? "Has ganadi !" : " ";
+
+        if (respuesta == 1 && aleatorio == 2 ) {
+            System.out.println("Has perdido!");
         }
-        String conclusion1 = (respuesta == 0 && aleatorio == 1 && aleatorio !=2) ? "Has perdido!" : " ";
+        else if (respuesta == 1 && aleatorio == 3){
+            System.out.println("Has ganado!");
+        }
+        else if (respuesta == 3 && aleatorio == 1){
+            System.out.println("Has perdido!");
+        }
+        else if (respuesta == 3 && aleatorio == 2){
+            System.out.println("Has ganado!");
+        }
+        else if (respuesta == 2 && aleatorio == 1){
+            System.out.println("Has ganado!");
+        }
+        else if(respuesta == 2 && aleatorio == 3) {
+            System.out.println("Has perdido");
+        }
+        else if(respuesta == aleatorio){
+            System.out.println("Empate!");
+        }
+
+
 
 
 
