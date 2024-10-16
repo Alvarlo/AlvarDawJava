@@ -25,27 +25,41 @@ public class Ejercicio15AA {
         int media = 0;
         int porcentajeAprobados = 0;
         int calificacionPromedio = 0;
+        String respuesta2 = "F";
+        String finalizar = "";
 
         while (respuesta.equals("S")) {
 
             System.out.println("Calificación del alumno nº " + contador + ":");
             calificaciones = scn.nextInt();
-            media = calificaciones/contador;
-            contador++;
+
+            if (calificaciones < 10) {
+
+                media = calificaciones / contador;
+                contador++;
 
 
-            if (calificaciones >= 4) {
-                contadorAprobados++;
-            }else {
-                contadorSuspensos++;
+                if (calificaciones >= 4) {
+                    contadorAprobados++;
+                } else {
+                    contadorSuspensos++;
+                }
+                System.out.println("¿Quiere seguir calificando alumnos?");
+                System.out.println("Pulse S para seguir, F para finalizar");
+                finalizar = scl.nextLine();
+
+
+                if (finalizar.equals(respuesta2)) {
+                    System.out.println("Han aprobado " + contadorAprobados + " personas");
+                    System.out.println("Han suspendido " + contadorSuspensos + " personas");
+                    break;
+                }
+
+
             }
-
 
 
         }
 
-
-
     }
-
 }
