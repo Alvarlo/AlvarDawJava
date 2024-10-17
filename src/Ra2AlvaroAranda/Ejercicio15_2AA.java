@@ -2,7 +2,7 @@ package Ra2AlvaroAranda;
 
 import java.util.Scanner;
 
-public class Ejercicio15AA {
+public class Ejercicio15_2AA {
     public static void main(String[] args) {
         /*
         Escribe un programa que pregunte al usuario si desea analizar calificaciones de
@@ -19,12 +19,9 @@ public class Ejercicio15AA {
 
         int contador = 1;
         int contadorAprobados = 0;
-        int contadorSuspensos = 0;
         String respuesta = scl.nextLine();
         int calificaciones = 0;
         int sumaAprobados = 0;
-        String respuesta2 = "F";
-        String finalizar = "";
 
         while (respuesta.equals("S")) {
 
@@ -35,30 +32,22 @@ public class Ejercicio15AA {
 
                 contador++;
 
-
                 if (calificaciones >= 4) {
                     contadorAprobados++;
                     sumaAprobados += calificaciones;
-                } else {
-                    contadorSuspensos++;
-                }
-                System.out.print("¿Quiere seguir calificando alumnos? ");
-                System.out.print("(Pulse S para seguir, F para finalizar)");
-                finalizar = scl.nextLine();
-
-
-                if (finalizar.equals(respuesta2)) {
-                    System.out.println("Han aprobado " + contadorAprobados + " personas");
-                    System.out.println("Han suspendido " + contadorSuspensos + " personas");
-                    System.out.println("El porcentaje de aprobados es " + (contador/contadorAprobados)*100 +"%");
-                    System.out.println("El promedio de los aprobados es " + sumaAprobados/contadorAprobados);
-                    break;
                 }
 
+            }else System.out.println("Numero introducido no válido");
 
-            }
+            System.out.print("Escribe S para continuar evaluando: ");
+            respuesta= scl.nextLine();
 
 
+
+        }
+        if (contadorAprobados!=0) {
+            System.out.println("El porcentaje de aprobados es " + (contador/contadorAprobados)*100 + "%");
+            System.out.println("El promedio de los aprobados es " + sumaAprobados/contadorAprobados);
         }
 
     }
