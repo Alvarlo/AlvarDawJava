@@ -17,22 +17,22 @@ public class Ejercicio15_2AA {
         Scanner scn = new Scanner(System.in);
         System.out.println("¿Desea analizar las calificaciones de los alumnos?");
 
-        int contador = 1;
-        int contadorAprobados = 0;
+        double contador = 1;
+        double contadorAprobados = 0;
         String respuesta = scl.nextLine();
-        int calificaciones = 0;
-        int sumaAprobados = 0;
+        double calificaciones = 0;
+        double sumaAprobados = 0;
 
-        while (respuesta.equals("S")) {
+        while (respuesta.equalsIgnoreCase("S")) {
 
             System.out.println("Calificación del alumno nº " + contador + ":");
-            calificaciones = scn.nextInt();
+            calificaciones = scn.nextDouble();
 
             if (calificaciones <= 10) {
 
                 contador++;
 
-                if (calificaciones >= 4) {
+                if (calificaciones > 4) {
                     contadorAprobados++;
                     sumaAprobados += calificaciones;
                 }
@@ -46,7 +46,7 @@ public class Ejercicio15_2AA {
 
         }
         if (contadorAprobados!=0) {
-            System.out.println("El porcentaje de aprobados es " + (contador/contadorAprobados)*100 + "%");
+            System.out.println("El porcentaje de aprobados es " + (contadorAprobados*100)/contador + "%");
             System.out.println("El promedio de los aprobados es " + sumaAprobados/contadorAprobados);
         }
 

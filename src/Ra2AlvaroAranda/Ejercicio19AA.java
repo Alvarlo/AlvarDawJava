@@ -22,6 +22,8 @@ public class Ejercicio19AA {
 
 
         while (contador <= 3) {
+
+            System.out.println("RONDA " + contador);
             System.out.println("Piedra, papel o tijera, 1, 2 y... 3");
             System.out.println("1-Piedra");
             System.out.println("2-Papel");
@@ -59,6 +61,7 @@ public class Ejercicio19AA {
             }
             System.out.println("Puntos Java: " + puntosJava);
             System.out.println("Puntos Usuario : " + puntosUser);
+            System.out.println(" ");
 
 
         }
