@@ -24,5 +24,11 @@ public class AceptaElReto4 {
          el siglo VII que si intuia la existencia del cero. Pero, penso, si no hay "mes cero", ni "dia de la semana cero",
          ni "siglo cero", ¿por que ha de haber "ano cero"?
          */
+
+
+
+
+
+
     }
 }
