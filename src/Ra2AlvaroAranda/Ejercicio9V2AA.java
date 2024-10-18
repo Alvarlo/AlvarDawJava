@@ -22,6 +22,7 @@ public class Ejercicio9V2AA {
                 System.out.println("VOCAL");
 
             } else System.out.println("NO VOCAL");
+
             letra = scl.nextLine();
 
         }
