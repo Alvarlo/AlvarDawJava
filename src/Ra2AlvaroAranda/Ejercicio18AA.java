@@ -37,7 +37,7 @@ public class Ejercicio18AA {
         //String conclusion1 = (respuesta == 1 && aleatorio == 2 && aleatorio !=3) ? "Has perdido!" : " ";
         //String conclusion2 = (respuesta == 1 && aleatorio == 3 && aleatorio !=2) ? "Has ganadi !" : " ";
 
-        if (respuesta == 1 && aleatorio == 2 ) {
+        if (respuesta == 1 && aleatorio == 2) {
             System.out.println("Has perdido!");
         }
         else if (respuesta == 1 && aleatorio == 3){

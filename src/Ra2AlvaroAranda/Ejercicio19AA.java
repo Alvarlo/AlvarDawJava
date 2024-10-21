@@ -29,8 +29,7 @@ public class Ejercicio19AA {
             System.out.println("2-Papel");
             System.out.println("3-Tijera");
 
-
-
+            
             int respuesta = scn.nextInt();
             int aleatorio = (int) (Math.random()*3+1);
 
