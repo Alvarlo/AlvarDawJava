@@ -24,44 +24,35 @@ public class Ejercicio19AA {
         while (contador <= 3) {
 
             System.out.println("RONDA " + contador);
-            System.out.println("Piedra, papel o tijera, 1, 2 y... 3");
-            System.out.println("1-Piedra");
-            System.out.println("2-Papel");
-            System.out.println("3-Tijera");
+            System.out.println("Piedra, papel o tijera 1, 2 y... 3");
+            System.out.println("0-Piedra");
+            System.out.println("1-Papel");
+            System.out.println("2-Tijera");
 
 
             int respuesta = scn.nextInt();
-            int aleatorio = (int) (Math.random()*3+1);
+            int aleatorio = (int) (Math.random()*3);
 
             contador++;
 
-            if (respuesta == 1 && aleatorio == 2) {
+            if ((respuesta == 0 && aleatorio == 1)||(respuesta == 2 && aleatorio == 0) || (respuesta == 1 && aleatorio == 2)) {
                 System.out.println("Has perdido!");
-                puntosJava++;
-            } else if (respuesta == 1 && aleatorio == 3) {
-                System.out.println("Has ganado!");
-                puntosUser++;
-            } else if (respuesta == 3 && aleatorio == 1) {
-                System.out.println("Has perdido!");
-                puntosJava++;
-            } else if (respuesta == 3 && aleatorio == 2) {
-                System.out.println("Has ganado!");
-                puntosUser++;
-            } else if (respuesta == 2 && aleatorio == 1) {
-                System.out.println("Has ganado!");
-                puntosUser++;
-            } else if (respuesta == 2 && aleatorio == 3) {
-                System.out.println("Has perdido");
-                puntosJava++;
-            } else if (respuesta == aleatorio) {
-                System.out.println("Empate!");
-                puntosUser++;
                 puntosJava++;
             }
-            System.out.println("Puntos Java: " + puntosJava);
-            System.out.println("Puntos Usuario : " + puntosUser);
-            System.out.println(" ");
+            else if ((respuesta == 0 && aleatorio == 2)||(respuesta == 2 && aleatorio == 1)||(respuesta == 1 && aleatorio == 0)) {
+                System.out.println("Has ganado!");
+                puntosUser++;
+            }
+            else if(respuesta == aleatorio){
+                System.out.println("Empate! Vuelve a jugar");
+                contador--;
+            }
 
+            if (contador < 3) {
+                System.out.println("Puntos Java: " + puntosJava);
+                System.out.println("Puntos Usuario : " + puntosUser);
+                System.out.println("**************************");
+            }
 
         }
         System.out.println(" ");
