@@ -2,7 +2,7 @@ package EjBuclesExtra;
 
 import java.util.Scanner;
 
-public class Ejercicio14 {
+public class Ejercicio14_2 {
     public static void main(String[] args) {
         /*
         Hacer un programa que muestre un cronometro, indicando las horas, minutos y segundos.
@@ -18,18 +18,14 @@ public class Ejercicio14 {
         System.out.print("Segundos: ");
         int segundos = sc.nextInt();
 
-        while (horas > 0 || minutos >0 || segundos > 0){
-            if (segundos == 0){
-                segundos=59;
-                minutos--;
-                if (minutos<0){
-                    minutos=59;
-                    horas--;
-
+        for (; horas >= 0; horas--) {
+            for (; minutos >= 0; minutos--) {
+                for (; segundos >= 0; segundos--) {
+                    System.out.println(horas + " : " + minutos + " : " + segundos);
                 }
-            }else segundos--;
-            System.out.println(" Horas " + horas + " Minutos " + minutos + " Segundos " +  segundos);
-
+                segundos=59;
+            }
+            minutos=59;
         }
 
     }
