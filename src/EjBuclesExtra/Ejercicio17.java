@@ -12,7 +12,7 @@ public class Ejercicio17 {
 
         Scanner scn = new Scanner(System.in);
 
-        
+
 
     }
 }
