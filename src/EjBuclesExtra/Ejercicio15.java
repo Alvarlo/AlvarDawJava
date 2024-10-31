@@ -9,12 +9,13 @@ public class Ejercicio15 {
         Se pide por teclado la cantidad de números primos que queremos mostrar.
          */
         Scanner scn = new Scanner(System.in);
-
         int num = scn.nextInt();
+
+
         boolean flagPrimo = true;
 
-        for (int i = num; i > 0; i--) {
-            for (int j = 0; j < i ; j++) {
+        for (int i = 1; i <= num; i++) {
+            for (int j = 2; j < i ; j++) {
                 if ((j % i) == 0) {
                     flagPrimo = false;
                     break;
