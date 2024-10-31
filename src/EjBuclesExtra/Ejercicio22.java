@@ -15,8 +15,16 @@ public class Ejercicio22 {
         String frase = scl.nextLine();
         System.out.print("Introduce letra: ");
         char letra = scc.next().charAt(0);
+        int contadorletra = 0;
 
-        System.out.println(letra);
+        for (int i = 0; i < frase.length(); i++) {
+            if (frase.charAt(i) == letra){
+                contadorletra++;
+            }else {
+                continue;
+            }
+        }
+        System.out.println(contadorletra);
 
 
 
