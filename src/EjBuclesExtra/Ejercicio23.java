@@ -8,7 +8,7 @@ public class Ejercicio23 {
         Pedir un número entre 0 y 9.999 y decir cuantas cifras tiene.
          */
         Scanner scn = new Scanner(System.in);
-        int num = scn.nextInt();;
+        int num = scn.nextInt();
 
         if (num < 0 && num > 10){
             System.out.println("Tu número tiene 1 cifra");
