@@ -8,12 +8,13 @@ public class Ejercicio24 {
         Pedir un número entre 0 y 9.999, decir si es capicúa.
          */
         Scanner scn = new Scanner(System.in);
+        System.out.println("Introduce un número entre el 1 y el 9999");
         String frase = scn.nextLine();
         int num = Integer.parseInt(frase);
 
-        if (num > 0 && num < 10) {
+        if (num >= 0 && num < 10) {
 
-            System.out.println("No es capicua");
+            System.out.println("Es capicua");
 
         } else if (num < 100) {
             if (frase.charAt(0) == frase.charAt(1)){
