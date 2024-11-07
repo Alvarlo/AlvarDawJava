@@ -9,7 +9,7 @@ import java.util.Scanner;
  * respuesta3: Haciendo un if despues de pedir el número. Convirtíendolo en positvo y añadiendo un - al principio
  *             del string respuesta.
  */
-public class EjercicioDebug3AA {
+public class EjercicioDebug3V2AA {
     public static void main(String[] args) {
         /*
         Escribe un programa que descomponga un número entero positivo en sus factores primos.
@@ -18,6 +18,7 @@ public class EjercicioDebug3AA {
 
         //1. Pide al usuario un número positivo.
         Scanner scn = new Scanner(System.in);
+
         int num = scn.nextInt();
         String respuesta = "";
         if (num<0){
@@ -38,6 +39,10 @@ public class EjercicioDebug3AA {
                 }else divisor++;
             }else divisor++;
         }
-        System.out.println(respuesta.substring(0,respuesta.length()-2));
+        try {
+            System.out.println(respuesta.substring(0, respuesta.length() - 2));
+        }catch (Exception e){
+            System.out.println("Inserta un número distinto a 0");
+        }
     }
 }

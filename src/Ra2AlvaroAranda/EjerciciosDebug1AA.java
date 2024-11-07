@@ -38,7 +38,6 @@ public class EjerciciosDebug1AA {
                 solucion = num1 + num2;
                 num1 = num2;
                 num2 = solucion;
-
         }
     }
 }
