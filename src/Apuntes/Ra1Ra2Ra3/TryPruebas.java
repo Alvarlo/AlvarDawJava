@@ -1,4 +1,4 @@
-package Apuntes;
+package Apuntes.Ra1Ra2Ra3;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
