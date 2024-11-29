@@ -13,6 +13,7 @@ public class Ejercicio22 {
 
         System.out.print("Introduce frase: ");
         String frase = scl.nextLine();
+
         System.out.print("Introduce letra: ");
         char letra = scc.next().charAt(0);
         int contadorletra = 0;
