@@ -7,6 +7,8 @@ public class Animal {
     private String nombre;
     private String especie;
 
+
+
     public double getPeso() {
         return peso;
     }

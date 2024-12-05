@@ -13,16 +13,17 @@ public class PruebasPersona {
         Persona p2 = new Persona(20, 80, "Enrique", "España",true);
 
         p1.saludar();
-        System.out.println(p1.puedeConducir());
-        System.out.println(p1.nombreLargo());
-        System.out.println(p1.toString());
+        p1.puedeConducir();
+        p1.nombreLargo();
+        System.out.println(p1);
 
         System.out.println(" ");
+
         p2.saludar();
-        System.out.println(p2.nombreLargo());
-        System.out.println(p2.mayorEdad());
-        System.out.println(p2.puedeConducir());
-        System.out.println(p2.toString());
+        p2.nombreLargo();
+        p2.mayorEdad();
+        p2.puedeConducir();
+        System.out.println(p2);
 
 
     }
