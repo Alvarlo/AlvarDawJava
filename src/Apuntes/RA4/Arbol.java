@@ -35,4 +35,22 @@ public class Arbol {
                 ", variedad='" + variedad + '\'' +
                 '}';
     }
+
+    //cuando nuetra clase es privada, usamos getters y setters para obtener o para poner valores a variables
+
+    public double getAltura() {
+        return altura;
+    }
+
+    public void setAltura(double altura) {
+        this.altura = altura;
+    }
+
+    public boolean getCauduca(){
+        return caduca;
+    }
+
+    public static void raices(){ //como es estatico para llamarlo no necesito hacer una instancia
+        System.out.println("tengo raices");
+    }
 }
