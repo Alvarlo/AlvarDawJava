@@ -21,12 +21,12 @@ public class Jorge{
         else if(num == 2){
 
             System.out.println("Cuando te quitas la camiseta, de lo petao que estás, la rompes y escuchas " +
-                    "\na mamá gritando preguntándote qué ha pasado"); //pelea contra mi madre XDD
+                    "\na mamá gritando preguntándote que qué ha pasado"); //pelea contra mi madre XDD
 
         }
         else if(num == 3){
             System.out.println("Cuando vas a entrar a la cocina te tropiezas con el escalón y te das un coscorrón con" +
-                    "\nel pomo de la puerta, quitándote"); //le baja la vida un buen trozo
+                    "\nel pomo de la puerta"); //le baja la vida un buen trozo
 
         }
         else if(num == 4){

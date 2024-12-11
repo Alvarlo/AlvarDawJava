@@ -76,18 +76,32 @@ public class JavaXMas {
 
     }
     public static void introduccion(){
-        System.out.println("Bienvenido a tu primera Navidad con Java, elige lo que defina más:" +
-                "\n1- En invierno hace frío, pero igualmente sales y te fumas un sigarro" +
-                "\n2- Paco" +
-                "\n3- Pablo" +
-                "\n4- Jose" +
-                "\n5- Papa" +
-                "\n6- Mama" +
-                "\n7- Translate to english plz" +
-                "\n8- Te pones Juan Luis Guerra y te echas un bailesito" +
-                "\n9- Te quedas dormida por culpa de tu gata" +
-                "\n10- Sof" +
-                "\n11- Si has tardado mucho en decidir, esta es tu opción"
+        System.out.println("""
+                Bienvenido a tu primera Navidad con Java, elige lo que te defina más:\
+                
+                1- En invierno hace frío, pero igualmente sales y te fumas un sigarro\
+                
+                2- Te llaman por teléfono y tardas menos de 1 segundo en contestar\
+                
+                3- Te vas a una cena y acabas hablando en chino con la camarera\
+                
+                4- Facturas más equipaje que Papa Noel en Navidad\
+                
+                5- Volviendo a casa, ves un patinete abandonado en la basura y decides adoptarlo\
+                
+                6- Te despiertas pensando en un tío gritando "A EURO A EURO"\
+                
+                7- Translate to english plz\
+                
+                8- Te pones Juan Luis Guerra y te echas un bailesito\
+                
+                9- Te quedas dormida por culpa de tu gata\
+                
+                10- Sof\
+                
+                11- Si has tardado mucho en decidir, esta es tu opción
+                
+                12- Gus"""
         );
 
 
