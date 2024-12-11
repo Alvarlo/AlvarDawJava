@@ -9,7 +9,7 @@ public class Prueba2 {
         System.out.println(a1.toString());
         a1.movimiento();
 
-        Mamifero m1 = new Mamifero("05/05/1996", "Willy", "perro", 4)
+        Mamifero m1 = new Mamifero("05/05/1996", "Willy", "perro", 4);
         System.out.println(m1);
         m1.movimiento();
 
