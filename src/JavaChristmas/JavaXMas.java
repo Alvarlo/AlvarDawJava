@@ -52,9 +52,9 @@ public class JavaXMas {
 
         }else if(nombrePersonaje.equals("Enrique")){
 
+        }else if(nombrePersonaje.equals("Gus")){
+
         }
-
-
 
 
         int respuesta2 = scn.nextInt();
@@ -93,6 +93,10 @@ public class JavaXMas {
                 12- Si has tardado mucho en decidir, esta es tu opción
                 """
         );
+
+
+
+
 
 
 

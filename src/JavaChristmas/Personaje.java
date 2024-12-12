@@ -60,7 +60,7 @@ public class Personaje {
 
     public void decision1(int num, Personaje p){
         if(personaje.equals("Jorge")){
-            Jorge.decision1(num, p);//vas a hacer la actividad?
+            Jorge.decision1(num, p);
         }
         else if(personaje.equals("Paco")){
 
