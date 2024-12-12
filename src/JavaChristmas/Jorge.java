@@ -1,6 +1,6 @@
 package JavaChristmas;
 
-public class Jorge{
+public class Jorge {
 
     private int vida;
     private int ataque;
@@ -9,13 +9,15 @@ public class Jorge{
 
 
 
-    public static void decision1(int num){
+    public static void decision1(int num, Personaje p){
         if(num == 1){
 
 
             System.out.println("A la segunda calada, te das cuenta de que hay un abejorro dando vueltas" +
                     "\na tu alrededor y te fijas en que te está mirando fijamente, usando tu Cigarro," +
                     "\ndecides intentar matarlo");
+
+
             //pelea contra abejorro xD
         }
         else if(num == 2){
@@ -28,12 +30,14 @@ public class Jorge{
             System.out.println("Cuando vas a entrar a la cocina te tropiezas con el escalón y te das un coscorrón con" +
                     "\nel pomo de la puerta"); //le baja la vida un buen trozo
 
+            p.setVida(p.getVida()-20);
+
+
         }
         else if(num == 4){
 
             System.out.println("Mientras subes las escaleras, piensas en la siesta que te vas a echar. Te acuestas, pero" +
                     "\nempiezan a discutir por la casa y encima te has dejado la puerta abierta."); //baja el ataque
-
 
         }
         else{

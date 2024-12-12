@@ -53,13 +53,14 @@ public class Personaje {
             case 9 -> personaje="Alicia";
             case 10 -> personaje="Sof";
             case 11 -> personaje="Enrique";
+            case 12 -> personaje="Gus";
         }
         return personaje;
     }
 
-    public void decision1(int num){
+    public void decision1(int num, Personaje p){
         if(personaje.equals("Jorge")){
-            Jorge.decision1(num);//vas a hacer la actividad?
+            Jorge.decision1(num, p);//vas a hacer la actividad?
         }
         else if(personaje.equals("Paco")){
 
