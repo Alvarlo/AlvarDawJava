@@ -12,8 +12,6 @@ public class JavaXMas {
         Scanner scn = new Scanner(System.in);
         Scanner scl = new Scanner(System.in);
 
-
-
         introduccion();
 
         int respuesta1 = scn.nextInt();
