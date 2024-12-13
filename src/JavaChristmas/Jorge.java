@@ -43,7 +43,7 @@ public class Jorge {
         else{
             System.out.println("Coges tu teléfono, pensando en llamar al que te despidió, al llamar te da una descarga" +
                     "\ny te quedas paralizado, viendo como lentamente el abejorro que estaba dando vueltas viene" +
-                    "\na darte un buen picotazo, envenenándote con su aguijónc"); //pierde vida cada turno
+                    "\na darte un buen picotazo, envenenándote con su aguijón"); //pierde vida cada turno
 
         }
 
