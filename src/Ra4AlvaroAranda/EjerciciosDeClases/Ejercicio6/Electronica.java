@@ -25,7 +25,7 @@ public class Electronica extends Producto{
         }
         return resultado;
 
-        
+
         /* int fechaC = Integer.parseInt(getFechaCompra().substring(6,10));
         int fechaA = Integer.parseInt(fecha.substring(6,10));
         if (fechaC-fechaA < getLimiteGarantia()) {
@@ -37,13 +37,10 @@ public class Electronica extends Producto{
          */
     }
 
-
-
-    public Electronica(String nombre, double precio, String fechaCompra, String limiteGarantiaMeses) {
+    public Electronica(String nombre, double precio, String fechaCompra, int limiteGarantiaMeses) {
         super(nombre, precio);
         this.fechaCompra = fechaCompra;
         this.limiteGarantiaMeses = limiteGarantiaMeses;
-
     }
 
     public String getFechaCompra() {
@@ -54,14 +51,13 @@ public class Electronica extends Producto{
         this.fechaCompra = fechaCompra;
     }
 
-    public String getLimiteGarantia() {
+    public int getLimiteGarantiaMeses() {
         return limiteGarantiaMeses;
     }
 
-    public void setLimiteGarantia(String limiteGarantia) {
-        this.limiteGarantiaMeses = limiteGarantia;
+    public void setLimiteGarantiaMeses(int limiteGarantiaMeses) {
+        this.limiteGarantiaMeses = limiteGarantiaMeses;
     }
-
 
     @Override
     public String toString() {
