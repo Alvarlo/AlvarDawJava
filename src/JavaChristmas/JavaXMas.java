@@ -34,7 +34,7 @@ public class JavaXMas {
 
         }else if(nombrePersonaje.equals("Pablo")){
 
-        }else if(nombrePersonaje.equals("Jose")) {
+        }else if(nombrePersonaje.equals("Jose")){
 
         }else if(nombrePersonaje.equals("Papa")){
 

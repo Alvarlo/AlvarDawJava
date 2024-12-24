@@ -17,8 +17,6 @@ public class Jorge {
                     "\na tu alrededor y te fijas en que te está mirando fijamente, usando tu Cigarro," +
                     "\ndecides intentar matarlo");
 
-
-            //pelea contra abejorro xD
         }
         else if(num == 2){
 
