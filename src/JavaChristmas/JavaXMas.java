@@ -24,13 +24,19 @@ public class JavaXMas {
             p.setArma("Cigarro");
             System.out.println("Al terminar el cigarro, decides: " +
                     "\n 1: Fumarte otro" +
-                    "\n 2: Te quitas la camiseta y tomas el sol" +
-                    "\n 3: Entras a tomarte un café" +
-                    "\n 4: Te vuelves a dormir" +
-                    "\n 5: Te acuerdas de que te despidieron y te deprimes");
+                    "\n 2: Entras a tomarte un café" +
+                    "\n 3: Te acuerdas de que te despidieron y te entra to el coraje");
 
         }
         else if(nombrePersonaje.equals("Paco")){
+            p.setVida(100);
+            p.setAtaque(20);
+            p.setArma("Batuta");
+            System.out.println("Al terminar el cigarro, decides: " +
+                    "\n 1: Fumarte otro" +
+                    "\n 2: Entras a tomarte un café" +
+                    "\n 3: Te acuerdas de que te despidieron y te entra to el coraje");
+
 
         }else if(nombrePersonaje.equals("Pablo")){
 
@@ -56,10 +62,42 @@ public class JavaXMas {
 
 
         int respuesta2 = scn.nextInt();
+        p.decision1(respuesta2,p);
 
+        if (nombrePersonaje.equals("Jorge")){
+            System.out.println("""
+                    
+                    
+                    
+                    
+                    """);
+        } else if (nombrePersonaje.equals("Paco")) {
 
-        p.decision1(3,p);
-        System.out.println(p.getVida());
+        }else if(nombrePersonaje.equals("Pablo")){
+
+        }else if(nombrePersonaje.equals("Jose")){
+
+        }else if(nombrePersonaje.equals("Papa")){
+
+        }else if(nombrePersonaje.equals("Mama")){
+
+        }else if(nombrePersonaje.equals("Jenn")){
+
+        }else if(nombrePersonaje.equals("Sofi")){
+
+        }else if(nombrePersonaje.equals("Alicia")){
+
+        }else if(nombrePersonaje.equals("Sof")){
+
+        }else if(nombrePersonaje.equals("Enrique")){
+
+        }else if(nombrePersonaje.equals("Gus")){
+
+        }
+
+        int respuesta3 = scn.nextInt();
+        p.decision2(respuesta3,p);
+
 
     }
     public static void introduccion(){

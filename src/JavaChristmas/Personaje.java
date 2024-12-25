@@ -52,8 +52,8 @@ public class Personaje {
             case 8 -> personaje="Sofi";
             case 9 -> personaje="Alicia";
             case 10 -> personaje="Sof";
-            case 11 -> personaje="Enrique";
-            case 12 -> personaje="Gus";
+            case 11 -> personaje="Gus";
+            case 12 -> personaje="Enrique";
         }
         return personaje;
     }
@@ -65,6 +65,9 @@ public class Personaje {
         else if(personaje.equals("Paco")){
 
         }
+
+    }
+    public void decision2(int num, Personaje p){
 
     }
 
