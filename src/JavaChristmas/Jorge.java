@@ -28,8 +28,8 @@ public class Jorge {
 
         }   else if(num == 2){
             System.out.println("""
-                    Antes de nada notas que hay un abejorro dando vueltas. Aprovechas que querías entrar para huir de él.\
-                    "Justo antes de entrar a la cocina, te tropiezas con el escalón y te das un coscorrón con\
+                    Antes de nada notas que hay un abejorro dando vueltas. Aprovechas que querías entrar para huir de él.
+                    "Justo antes de entrar a la cocina, te tropiezas con el escalón y te das un coscorrón con
                     "el pomo de la puerta. Notas como te da vueltas la cabeza, igual deberias ir con mas cuidado...
                     """);
             p.setVida(p.getVida()-20);
@@ -38,11 +38,12 @@ public class Jorge {
 
         } else{
 
+
             System.out.println("""
-                    Coges tu teléfono, pensando en llamar al que te despidió. Por alguna razón, te sabes el teléfono\
-                    de memoria y mientras vas tecleando, notas algo raro en esa combincación de números, pero sigues\
-                    adelante. Justo al presionar el botón de llamar, notas como una descarga eléctrica te recorre el\
-                    cuerpo y te quedas paralizado, viendo como lentamente el abejorro que estaba dando vueltas viene a darte\
+                    Coges tu teléfono, pensando en llamar al que te despidió. Por alguna razón, te sabes el teléfono
+                    de memoria y mientras vas tecleando, notas algo raro en esa combincación de números, pero sigues
+                    adelante. Justo al presionar el botón de llamar, notas como una descarga eléctrica te recorre el
+                    cuerpo y te quedas paralizado, viendo como lentamente el abejorro que estaba dando vueltas viene a darte
                     un buen picotazo para envenenándote con su aguijón.
                     """);
             System.out.println("Has sido envenenado. Sientes que cada decisión que tomes de ahora en adelante, te\n" +
