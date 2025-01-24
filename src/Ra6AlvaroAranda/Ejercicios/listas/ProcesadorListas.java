@@ -60,19 +60,92 @@ public class ProcesadorListas {
         //recorrer el Arraylist
         return suma;
     }
-    public static boolean addValue(ArrayList<String> lista, String elemento){
-        boolean sePuedeAniadir = true;
+    public static boolean deleteFirst(ArrayList<Integer> lista){
+        if (!lista.isEmpty()) {
 
-        if (sePuedeAniadir) {
+            lista.remove(0);
+            return true;
+        } else return false;
+    }
+    public static boolean deleteFirst(LinkedList<Integer> lista){
+        if (!lista.isEmpty()) {
+            lista.removeFirst();
+            return true;
+        } else return false;
+    }
+    public static boolean deleteFirst(Stack<Integer> lista){
+        if (!lista.isEmpty()) {
+            lista.remove(0);
+            return true;
+        } else return false;
+    }
+    public static boolean deleteOne(HashSet<Integer> lista, int elemento){
+        //Con un HashSet no se puede borrar el primer elemento de la colección
+        if (!lista.isEmpty()) {
+            lista.remove(elemento);
+            return true;
+        } else return false;
+    }
+
+    public static int addValueGetFirst(ArrayList<Integer>lista, int elemento){
+        lista.add(elemento);
+        return lista.getFirst();
+    }
+    public static int addValueGetFirst(LinkedList<Integer>lista, int elemento){
+        lista.add(elemento);
+        return lista.getFirst();
+    }
+    public static int addValueGetFirst(Stack<Integer>lista, int elemento){
+        lista.push(elemento);
+        return lista.getFirst();
+    }
+    public static int addValueGetFirst(HashSet<Integer>lista, int elemento){
+        if (!lista.contains(elemento)) {
             lista.add(elemento);
+        }
+            return elemento;
 
+    }
+    public static boolean checkValue(ArrayList<Integer>lista, int elemento){
+        if (lista.contains(elemento)) {
+            return false;
         }else {
-            sePuedeAniadir = false;
+            lista.add(elemento);
+            return true;
+        }
+    }
+    public static boolean checkValue(LinkedList<Integer>lista, int elemento){
+        if (lista.contains(elemento)) {
+            return true;
+        }else if(lista.add(elemento)){
+            lista.add(elemento);
+            return true;
+        }else{
+            return false;
         }
 
-
-        return sePuedeAniadir;
     }
+    public static boolean checkValue(Stack<Integer>lista, int elemento){
+        if (lista.contains(elemento)) {
+            return true;
+        }else if(lista.push(elemento)==elemento){
+            lista.add(elemento);
+            return true;
+        }else{
+            return false;
+        }
+    }
+    public static boolean checkValue(HashSet<Integer>lista, int elemento){
+        if (lista.contains(elemento)) {
+            return true;
+        }else if(lista.add(elemento)){
+            lista.add(elemento);
+            return true;
+        }else{
+            return false;
+        }
+    }
+
 
 
 
