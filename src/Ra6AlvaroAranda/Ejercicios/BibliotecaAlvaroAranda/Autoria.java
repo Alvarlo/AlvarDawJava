@@ -29,6 +29,8 @@ public class Autoria {
         this.apellidos = apellidos;
     }
 
+
+
     public Autoria(int id, String nombre, String apellidos) {
         this.id = id;
         this.nombre = nombre;
@@ -40,6 +42,6 @@ public class Autoria {
         return "Autoria: " +
                 "ID: " + id +
                 ", Nombre: " + nombre +
-                ", Apellidos: " + apellidos;
+                ", Apellidos: " + apellidos ;
     }
 }

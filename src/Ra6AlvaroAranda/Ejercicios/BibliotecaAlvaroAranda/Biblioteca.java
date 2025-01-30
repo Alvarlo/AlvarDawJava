@@ -2,7 +2,6 @@ package Ra6AlvaroAranda.Ejercicios.BibliotecaAlvaroAranda;
 
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.function.BinaryOperator;
 
 public class Biblioteca {
     private static ArrayList<Autoria> autores = new ArrayList<>();
@@ -11,7 +10,7 @@ public class Biblioteca {
 
     public static void main(String[] args) {
 
-        int respuesta;
+        int respuesta = -1;
 
         do {
             Scanner scl = new Scanner(System.in);
@@ -30,8 +29,14 @@ public class Biblioteca {
                     0. Salir
                     """;
             System.out.println(menu);
-            respuesta = scn.nextInt();
 
+
+            try {
+                respuesta = scn.nextInt();
+
+            } catch (Exception e) {
+                System.out.println("Has introducido una letra");
+            }
 
             if (respuesta == 1) { //AÑADIR UN AUTOR
                 int id;
@@ -56,7 +61,7 @@ public class Biblioteca {
             } else if (respuesta == 2) { // VER AUTORES
                 System.out.println(autores);
             } else if (respuesta == 3) { // AÑADIR LIBRO
-                String isbn, tituloLibro, nombre, apellido, genero, editorial;
+                String isbn, tituloLibro, genero, editorial;
                 int numEjemplares, numAutores, id;
 
                 System.out.println("Introduce el ISBN del libro");
@@ -66,21 +71,26 @@ public class Biblioteca {
                 if (existeISBN){
                     System.out.println("Ya existe un libro con ese ISBN");
                 }else {
-                    System.out.println("Inserta el Número de autores del libro");
-                    numAutores = scn.nextInt();
-                    if (numAutores > 5){
-                        System.out.println("No es posible registrar más de 5 autores, inténtelo de nuevo");
-                    }else {
-                        Autoria[] autorias = new Autoria[numAutores];
-                        for (int i = 0; i < numAutores; i++) {
-                            System.out.println("Inserta el id del Autor");
+
+                    do {
+                        System.out.println("Inserta el número de autores del libro (recuerda que máximo serán 5)");
+                        numAutores = scn.nextInt();
+                    }while (numAutores > 5);
+
+                    Autoria[] autorias = new Autoria[numAutores];
+
+                    int contador = 0;
+                        while (contador < numAutores){
+                            System.out.println("Inserta el id del Autor" + (contador+1));
                             id = scn.nextInt();
-                            System.out.println("Inserta el nombre del Autor");
-                            nombre = scl.nextLine();
-                            System.out.println("Inserta el apellido del Autor");
-                            apellido = scl.nextLine();
-                            Autoria a = new Autoria(id,nombre,apellido);
-                            autorias[i]=a;
+                            boolean existeAutor = comprobacionAutores(id);
+                            if (!existeAutor){
+                                System.out.println("No podemos asociar ese id a ningun Autor");
+                            }else {
+                                autorias[contador] = pickAutor(id);
+                                contador++;
+                            }
+
                         }
                         System.out.println("¿Cuál es el título del libro?");
                         tituloLibro = scl.nextLine();
@@ -94,7 +104,9 @@ public class Biblioteca {
                         a.setAutorias(autorias);
                         libros.add(a);
 
-                    }
+
+
+
                 }
 
             } else if (respuesta == 4) { // VER LIBROS
@@ -107,35 +119,118 @@ public class Biblioteca {
                 boolean existeIsbn = comprobacionISBN(isbn);
 
                 if (existeIsbn){
+                    Libro libro = prestamoLibro(isbn);
+
+                    System.out.println("El numero de ejemplares restantes es de: " + libro.prestar());
+
+                }else System.out.println("No tenemos ningun libro con ese ISBN");
+
+            } else if (respuesta == 6) { // DEVOLUCION LIBRO
+                String isbn;
+
+                System.out.println("Introduce el ISBN del libro a devolver");
+                isbn = scl.nextLine();
+
+                boolean existeIsbn = comprobacionISBN(isbn);
+
+                if (existeIsbn){
+                    System.out.println("El numero de ejemplares es ahora de:  " + prestamoLibro(isbn).devolver());
+                }else {
+                    System.out.println("No habia ningun libro prestado con ese ISBN");
+                }
+
+            } else if (respuesta == 7) { // AÑADIR REVISTA
+                String issn, tituloRevista;
+                int numEjemplares, numAutores, id, edicion;
+
+                System.out.println("Introduce el ISSN de la revista");
+                issn = scl.nextLine();
+                boolean existeISSN = comprobacionISSN(issn);
+
+                if (existeISSN){
+                    System.out.println("Ya existe una revista con ese ISBN");
+                }else {
+
+                    do {
+                        System.out.println("Inserta el número de autores de la revista (recuerda que máximo serán 5)");
+                        numAutores = scn.nextInt();
+                    }while (numAutores > 5);
+
+                    Autoria[] autorias = new Autoria[numAutores];
+
+                    int contador = 0;
+                    while (contador < numAutores){
+                        System.out.println("Inserta el id del Autor");
+                        id = scn.nextInt();
+                        boolean existeAutor = comprobacionAutores(id);
+                        if (!existeAutor){
+                            System.out.println("No podemos asociar ese id a ningun Autor");
+                        }else {
+                            autorias[contador] = pickAutor(id);
+                            contador++;
+                        }
+
+                    }
+                    System.out.println("¿Cuál es el título de la revista?");
+                    tituloRevista = scl.nextLine();
+                    System.out.println("¿Cuántos ejemplares hay de esta revista?");
+                    numEjemplares = scn.nextInt();
+                    System.out.println("¿Cuál es la editorial de la revista?");
+                    edicion = scn.nextInt();
+                    Revista r = new Revista (tituloRevista,numAutores,numEjemplares,issn,edicion);
+                    r.setAutorias(autorias);
+                    revistas.add(r);
 
                 }
 
-            } else if (respuesta == 6) {
+            } else if (respuesta == 8) { // VER REVISTAS
+                System.out.println(revistas);
+            } else if (respuesta == 9) { // PRESTAMO REVISTA
 
-            } else if (respuesta == 7) {
+                String issn;
 
-            } else if (respuesta == 8) {
+                System.out.println("Introduce el ISSN de la revista a prestar");
+                issn = scl.nextLine();
+                boolean existeIssn = comprobacionISSN(issn);
 
-            } else if (respuesta == 9) {
+                if (existeIssn){
+                    Revista revista = prestamoRevista(issn);
 
-            } else if (respuesta == 10) {
+                    System.out.println("El numero de ejemplares restantes es de: " + revista.prestar());
 
-            } else if (respuesta == 0) {
+                }else System.out.println("No tenemos ninguna revista con ese ISSN");
 
+            } else if (respuesta == 10) { // DEVUELVE REVISTA
+
+                String issn;
+
+                System.out.println("Introduce el ISSN de la revista a devolver");
+                issn = scl.nextLine();
+
+                boolean existeIssn = comprobacionISSN(issn);
+
+                if (existeIssn){
+                    System.out.println("El numero de ejemplares es ahora de:  " + prestamoRevista(issn).devolver());
+                }else {
+                    System.out.println("No habia ninguna revista prestada con ese ISBN");
+                }
+            } else if (respuesta == 0) { // SALIR
+                System.out.println("Muchas gracias! Hasta luego :)");
+                break;
             } else {
-
+                System.out.println("Error, vuelve a introducir un numero válido");
             }
-        }while (respuesta > 0 && respuesta < 11);
+        }while (true);
     }
     public static boolean comprobacionAutores(int id){
-        boolean anadirOk = false;
+        boolean existeAutor = false;
         int i = 0;
-        while (!anadirOk && i < autores.size()){
+        while (!existeAutor && i < autores.size()){
             if (autores.get(i).getId() == id){
-                anadirOk = true;
+                existeAutor = true;
             }else i++;
         }
-        return anadirOk;
+        return existeAutor;
     }
     public static boolean comprobacionISBN(String isbn){
         boolean existeISBN = false;
@@ -147,7 +242,43 @@ public class Biblioteca {
         }
         return existeISBN;
     }
-    //public static boolean comprobacionLibros(){}
+    public static Libro prestamoLibro(String isbn){
+        Libro lib = new Libro("",0,0,"","","");
+        for (int i = 0; i < libros.size(); i++) {
+            if (isbn.equalsIgnoreCase(libros.get(i).getIsbn())){
+                lib = libros.get(i);
+            }
+        }
+        return lib;
+    }
+    public static Revista prestamoRevista(String issn){
+        Revista rev = new Revista("",0,0,"",0);
+        for (int i = 0; i < revistas.size(); i++) {
+            if (issn.equalsIgnoreCase(revistas.get(i).getIssn())){
+                rev = revistas.get(i);
+            }
+        }
+        return rev;
+    }
 
-    //public static boolean comprobacionISSN(){}
+    public static boolean comprobacionISSN(String issn){
+        boolean existeISSN = false;
+        int i = 0;
+        while (!existeISSN && i < revistas.size()){
+            if (revistas.get(i).getIssn().equalsIgnoreCase(issn)){
+                existeISSN = true;
+            }else i++;
+        }
+        return existeISSN;
+    }
+    public static Autoria pickAutor(int id){
+        Autoria aut = new Autoria(0,"","");
+        for (int i = 0; i < autores.size(); i++) {
+            if (id==(autores.get(i).getId())){
+                aut = autores.get(i);
+            }
+        }
+        return aut;
+    }
+
 }
