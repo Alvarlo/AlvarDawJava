@@ -41,9 +41,9 @@ public class Biblioteca {
                 System.out.println("Introduce el ID del nuevo Autor");
                 id = scn.nextInt();
 
-                boolean sePuedeAnadir = comprobacionAutores(id);
+                boolean existeAutor = comprobacionAutores(id);
 
-                if (sePuedeAnadir) {
+                if (!existeAutor) {
                     System.out.println("Introduce el nombre del nuevo Autor");
                     nombre = scl.nextLine();
                     System.out.println("Introduce los apellidos del nuevo Autor");
@@ -56,16 +56,59 @@ public class Biblioteca {
             } else if (respuesta == 2) { // VER AUTORES
                 System.out.println(autores);
             } else if (respuesta == 3) { // AÑADIR LIBRO
-                String isbn;
-                String tituloLibro;
-                int numEjemplares;
-                int numAutores;
+                String isbn, tituloLibro, nombre, apellido, genero, editorial;
+                int numEjemplares, numAutores, id;
 
+                System.out.println("Introduce el ISBN del libro");
+                isbn = scl.nextLine();
+                boolean existeISBN = comprobacionISBN(isbn);
+
+                if (existeISBN){
+                    System.out.println("Ya existe un libro con ese ISBN");
+                }else {
+                    System.out.println("Inserta el Número de autores del libro");
+                    numAutores = scn.nextInt();
+                    if (numAutores > 5){
+                        System.out.println("No es posible registrar más de 5 autores, inténtelo de nuevo");
+                    }else {
+                        Autoria[] autorias = new Autoria[numAutores];
+                        for (int i = 0; i < numAutores; i++) {
+                            System.out.println("Inserta el id del Autor");
+                            id = scn.nextInt();
+                            System.out.println("Inserta el nombre del Autor");
+                            nombre = scl.nextLine();
+                            System.out.println("Inserta el apellido del Autor");
+                            apellido = scl.nextLine();
+                            Autoria a = new Autoria(id,nombre,apellido);
+                            autorias[i]=a;
+                        }
+                        System.out.println("¿Cuál es el título del libro?");
+                        tituloLibro = scl.nextLine();
+                        System.out.println("¿Cuántos ejemplares hay de este libro?");
+                        numEjemplares = scn.nextInt();
+                        System.out.println("¿Cuál es el genero del libro?");
+                        genero = scl.nextLine();
+                        System.out.println("¿Cuál es la editorial del libro?");
+                        editorial = scl.nextLine();
+                        Libro a = new Libro (tituloLibro,numAutores,numEjemplares,isbn,genero,editorial);
+                        a.setAutorias(autorias);
+                        libros.add(a);
+
+                    }
+                }
 
             } else if (respuesta == 4) { // VER LIBROS
                 System.out.println(libros);
+            } else if (respuesta == 5) { //PRESTAMO DE UN LIBRO
+                String isbn;
 
-            } else if (respuesta == 5) {
+                System.out.println("Introduce el ISBN del libro a prestar");
+                isbn = scl.nextLine();
+                boolean existeIsbn = comprobacionISBN(isbn);
+
+                if (existeIsbn){
+
+                }
 
             } else if (respuesta == 6) {
 
@@ -85,24 +128,24 @@ public class Biblioteca {
         }while (respuesta > 0 && respuesta < 11);
     }
     public static boolean comprobacionAutores(int id){
-        boolean anadirOk = true;
+        boolean anadirOk = false;
         int i = 0;
-        while (anadirOk && i < autores.size()){
+        while (!anadirOk && i < autores.size()){
             if (autores.get(i).getId() == id){
-                anadirOk = false;
+                anadirOk = true;
             }else i++;
         }
         return anadirOk;
     }
     public static boolean comprobacionISBN(String isbn){
-        boolean compruebaISBN = true;
+        boolean existeISBN = false;
         int i = 0;
-        while (compruebaISBN && i < libros.size()){
+        while (!existeISBN && i < libros.size()){
             if (libros.get(i).getIsbn().equalsIgnoreCase(isbn)){
-                compruebaISBN = false;
+                existeISBN = true;
             }else i++;
         }
-        return compruebaISBN;
+        return existeISBN;
     }
     //public static boolean comprobacionLibros(){}
 

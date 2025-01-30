@@ -37,9 +37,9 @@ public class Autoria {
 
     @Override
     public String toString() {
-        return "[Autoria: " +
+        return "Autoria: " +
                 "ID: " + id +
                 ", Nombre: " + nombre +
-                ", Apellidos: " + apellidos + "]";
+                ", Apellidos: " + apellidos;
     }
 }

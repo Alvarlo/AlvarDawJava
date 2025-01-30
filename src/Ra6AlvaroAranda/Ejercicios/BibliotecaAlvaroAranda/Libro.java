@@ -1,5 +1,7 @@
 package Ra6AlvaroAranda.Ejercicios.BibliotecaAlvaroAranda;
 
+import java.util.Arrays;
+
 public class Libro extends Publicacion{
     private String isbn;
     private String genero;
@@ -38,9 +40,12 @@ public class Libro extends Publicacion{
 
     @Override
     public String toString() {
-        return "[Libro: " +
-                "ISBN: '" + isbn +
+        return "Libro: " +
+                "ISBN: " + isbn +
+                ", Titulo: " + super.getTitulo() +
+                ", Autores: " + Arrays.toString(super.getAutorias()) +
                 ", Genero: " + genero  +
-                ", Editorial: " + editorial + "]";
+                ", Editorial: " + editorial +
+                ", Número de Ejemplares: " + super.getEjemplares();
     }
 }

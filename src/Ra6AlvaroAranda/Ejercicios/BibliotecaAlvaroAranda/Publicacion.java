@@ -61,10 +61,10 @@ public class Publicacion {
 
     @Override
     public String toString() {
-        return "[Publicacion: " +
+        return "Publicacion: " +
                 "Titulo: " + titulo +
                 ", Autorias: " + Arrays.toString(autorias) +
                 ", Ejemplares: " + ejemplares +
-                ", Prestados: " + prestados + "]";
+                ", Prestados: " + prestados;
     }
 }

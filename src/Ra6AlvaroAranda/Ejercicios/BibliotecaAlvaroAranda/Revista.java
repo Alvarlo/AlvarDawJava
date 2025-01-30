@@ -28,8 +28,8 @@ public class Revista extends Publicacion{
 
     @Override
     public String toString() {
-        return "[Revista: " +
+        return "Revista: " +
                 ", ISSN: " + issn +
-                ", Edicion: " + edicion + "]";
+                ", Edicion: " + edicion;
     }
 }
