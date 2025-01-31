@@ -1,5 +1,7 @@
 package Ra6AlvaroAranda.Ejercicios.BibliotecaAlvaroAranda;
 
+import java.util.Arrays;
+
 public class Revista extends Publicacion{
     private String issn;
     private int edicion;
@@ -30,6 +32,9 @@ public class Revista extends Publicacion{
     public String toString() {
         return "Revista: " +
                 ", ISSN: " + issn +
-                ", Edicion: " + edicion;
+                ", Titulo: " + super.getTitulo() +
+                ", Autores: " + Arrays.toString(super.getAutorias()) +
+                ", Edicion: " + edicion+
+                ", Número de Ejemplares: " + super.getEjemplares();
     }
 }
