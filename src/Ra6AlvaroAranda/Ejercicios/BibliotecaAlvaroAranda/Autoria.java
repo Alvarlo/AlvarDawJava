@@ -42,6 +42,7 @@ public class Autoria {
         return "Autoria: " +
                 "ID: " + id +
                 ", Nombre: " + nombre +
-                ", Apellidos: " + apellidos ;
+                ", Apellidos: " + apellidos
+                ;
     }
 }
