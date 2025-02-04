@@ -86,7 +86,7 @@ public class Biblioteca {
 
                     int contador = 0;
                     while (contador < numAutores){
-                        System.out.println("Inserta el id del Autor" + (contador+1));
+                        System.out.println("Inserta el id del Autor " + (contador+1));
                         id = scn.nextInt(); //PEDIMOS EL ID DEL AUTOR
                         boolean existeAutor = comprobacionAutores(id);  //COMPROBAMOS SI TENEMOS ESE AUTOR EN NUESTRA BASE DE DATOS
                         if (!existeAutor){
@@ -165,14 +165,17 @@ public class Biblioteca {
 
                     int contador = 0;
                     while (contador < numAutores){
-                        System.out.println("Inserta el id del Autor");
+                        System.out.println("Inserta el id del Autor " + (contador+1) );
                         id = scn.nextInt();     //PEDIMOS ID DEL AUTOR
                         boolean existeAutor = comprobacionAutores(id); //COMPROBAMOS SI TENEMOS ESE AUTOR EN NUESTRA BDD
-                        if (!existeAutor){
-                            System.out.println("No podemos asociar ese id a ningun Autor"); //SI NO FUNCIONA VUELVE AL MENU
-                        }else {
+                        if (!existeAutor && id >= 0){
+                            System.out.println("No podemos asociar ese id a ningun Autor, por favor, introduce " +
+                                    "un id correcto o introduce -1 si no lo conoces"); //SI NO FUNCIONA PIDE DE NUEVO ID
+                        }else if (existeAutor && id >= 0){
                             autorias[contador] = pickAutor(id); //RELLENAMOS LOS DATOS DE ESE AUTOR CON EL ID DADO
                             contador++;
+                        }else {
+                            break;
                         }
 
                     }//PEDIMOS EL RESTO DE DATOS
