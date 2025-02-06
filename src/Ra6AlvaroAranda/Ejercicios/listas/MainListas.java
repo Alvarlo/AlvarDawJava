@@ -1,7 +1,10 @@
 package Ra6AlvaroAranda.Ejercicios.listas;
 
+import Ra6AlvaroAranda.Ejercicios.BibliotecaAlvaroAranda.Biblioteca;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 
 public class MainListas {
     public static void main(String[] args) {
@@ -10,11 +13,23 @@ public class MainListas {
 
 
 
-        HashMap<String, Double> alumnos = new HashMap<>(); //1er valor = clave && 2o valor = value de la clave
-        alumnos.put("Alvaro1",6.75);
-        alumnos.put("Alvaro2",8.75);
-        alumnos.put("Teo",10.0);
+        HashMap<String, Integer> alumnos = new HashMap<>(); //1er valor = clave && 2o valor = value de la clave
+        alumnos.put("Alvaro1",6);
+        alumnos.put("Alvaro2",8);
+        alumnos.put("Teo",10);
 
-        System.out.println(alumnos.get("Alvaro1"));
+        if (alumnos.containsValue(6)){
+            System.out.println("si");
+        }else {
+            System.out.println("no");
+        }
+
+        System.out.println(ProcesadorListas.sumaColeccion(alumnos));
+
+
+        Iterator<Integer> valores = alumnos.values().iterator();
+
+
+
     }
 }
