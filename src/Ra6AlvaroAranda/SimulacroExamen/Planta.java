@@ -12,4 +12,11 @@ public class Planta {
         this.frutos = frutos;
         this.cantidad_regada = 0;
     }
+    public double regar(){
+        return 0.0;
+    }
+    public double producir_frutos(){
+        return 0.0;
+    }
+
 }

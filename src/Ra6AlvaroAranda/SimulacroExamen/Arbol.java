@@ -10,4 +10,16 @@ public class Arbol extends Planta{
         this.tipoHoja = tipoHoja;
         this.diametro = diametro;
     }
+    @Override
+    public double regar() {
+
+        super.regar()+=
+
+        return super.regar();
+    }
+
+    @Override
+    public double producir_frutos() {
+        return super.producir_frutos();
+    }
 }
