@@ -10,11 +10,14 @@ public class Arbusto extends Planta{
         this.clima = clima;
     }
 
+    /*
     @Override
     public double regar() {
         cantidad_regada += super.regar();
         if (P)
     }
+
+     */
 
     @Override
     public double producir_frutos() {
