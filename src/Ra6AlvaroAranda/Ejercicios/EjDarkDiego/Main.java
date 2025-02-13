@@ -40,29 +40,36 @@ public class Main {
         }
         System.out.println(Arrays.toString(coordenadas));
 
+        //Desordena el array con posiciones aleatorias
         int[] aleatorios = new int[15];
         boolean sePuede = false;
-        //Desordena el array con posiciones aleatorias
-        int z = 0;
+        int z = 0, contador = 0;
+
+
         for (int i = 0; i < coordenadas.length; i++) {
             z = (int)(Math.random()*15);
             System.out.println(z);
-            for (int j = 0; j < aleatorios.length; j++) {
-                if (aleatorios[j]==z) {
-                    sePuede = false;
-                    break;
-                }else {
-                    sePuede = true;
+
+            if (aleatorios[contador]== 0){
+                aleatorios[contador] = z;
+            }else {
+                while (contador < aleatorios.length && !sePuede) {
+
+                    if (aleatorios[contador] != z) {
+                        aleatorios[contador] = z;
+                        sePuede = true;
+
+                    } else contador++;
+
                 }
+
                 if (sePuede) {
-                    coordenadas[i] = coordenadas[z];
-                    aleatorios[i] = z;
-                }else {
-                    i--;
+                    Coordenadas aux = coordenadas[z];
+                    coordenadas[z] = coordenadas[i];
+                    coordenadas[i] = aux;
+                    sePuede = false;
                 }
             }
-
-
 
         }
         System.out.println(Arrays.toString(aleatorios));

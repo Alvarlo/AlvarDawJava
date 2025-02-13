@@ -32,8 +32,7 @@ public class Pulpo {
         int cantidad = 0;
         for (int i = 0; i < tentaculos.length; i++) {
             if ((id == tentaculos[i].getId()) && (tentaculos[i]!= null)){
-                tentaculos[i].crecer(longitud);
-                cantidad = tentaculos[i].longitud;
+                cantidad = tentaculos[i].crecer(longitud);
                 break;
             }else{
                 cantidad = -1;
@@ -45,8 +44,12 @@ public class Pulpo {
 
     @Override
     public String toString() {
-        return "Pulpo {" +nombre+"} " +
-                "Tentáculo {" + Arrays.toString(tentaculos) +
-                "}";
+        String salida = "Pulpo {"+nombre+"}: ";
+        for (int i = 0; i < tentaculos.length; i++) {
+            if (tentaculos[i]!=null){
+                salida += tentaculos[i];
+            }
+        }
+        return salida;
     }
 }

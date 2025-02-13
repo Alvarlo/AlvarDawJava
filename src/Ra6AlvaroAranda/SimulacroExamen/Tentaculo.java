@@ -20,7 +20,7 @@ public class Tentaculo {
 
     @Override
     public String toString() {
-        return "Tentáculos {" + id +
+        return "Tentáculo {" + id +
                 "} – longitud: {" + longitud +
                 "}";
     }

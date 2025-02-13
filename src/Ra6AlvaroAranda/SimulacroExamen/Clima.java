@@ -47,4 +47,7 @@ public class Clima {
         return cantidad;
     }
 
+    public String getNombre() {
+        return nombre;
+    }
 }
