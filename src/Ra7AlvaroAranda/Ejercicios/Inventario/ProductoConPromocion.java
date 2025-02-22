@@ -13,17 +13,27 @@ public class ProductoConPromocion extends ProductoBase implements IPromocion{
     }
 
     @Override
-    public void aplicarPromocion(double porcentajeDescuento) {
-
+    public void aplicarPromocion(double porcentajeDescuento) throws DescuentoInvalidoException {
+        if (!estaEnPromocion()) {
+            System.out.println("Ese producto no está en promoción");
+            return;
+        }
+        if (porcentajeDescuento < 0 || porcentajeDescuento > 100) {
+            throw new DescuentoInvalidoException();
+        }
+        this.descuento = (precioBase * porcentajeDescuento) / 100;
     }
 
     @Override
-    public void estaEnPromocion() {
-
+    public boolean estaEnPromocion() {
+        Date hoy = new Date();
+        if (hoy.after(fechaInicioPromocion) && hoy.before(fechaFinalPromocion)){
+            return true;
+        }else return false;
     }
 
     @Override
     public double getPrecioFinal() {
-        return 0;
+        return precioBase - descuento;
     }
 }
