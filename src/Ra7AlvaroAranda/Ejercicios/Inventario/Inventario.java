@@ -17,7 +17,7 @@ public class Inventario {
             throw new DescuentoInvalidoException();
         }
         for (ProductoBase producto : productos) {
-            if (producto.getCategoria() == categoria) {
+            if (producto.getCategoria().equalsIgnoreCase(categoria)) {
                 try {
                     producto.aplicarDescuento((producto.getPrecioBase() * descuento) / 100);
                 } catch (DescuentoInvalidoException e) {
