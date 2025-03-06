@@ -13,7 +13,7 @@ public class Inventario {
         productos.add(p);
     }
     public void aplicarDescuentoPorCategoria(double CategoriaProducto){
-        
+
     }
     public double calcularValorTotalInventario(){
         return 0.0;
