@@ -34,7 +34,7 @@ public class Revista extends Publicacion{
                 ", ISSN: " + issn +
                 ", Titulo: " + super.getTitulo() +
                 ", Autores: " + Arrays.toString(super.getAutorias()) +
-                ", Edicion: " + edicion+
+                ", Edicion: " + edicion +
                 ", Número de Ejemplares: " + super.getEjemplares();
     }
 }

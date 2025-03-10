@@ -4,12 +4,13 @@ public abstract class ProductoBase {
     private String nombre;
     private String categoria;
     private double precioBase;
-    private double descuentoAplicado;
+    private double descuento;
 
     public ProductoBase(String nombre, String categoria, double precioBase) {
         this.nombre = nombre;
         this.categoria = categoria;
         this.precioBase = precioBase;
+        this.descuento = 0;
     }
 
     public String getNombre() {
@@ -24,15 +25,15 @@ public abstract class ProductoBase {
         return precioBase;
     }
 
-    public double getDescuentoAplicado() {
-        return descuentoAplicado;
+    public double getDescuento() {
+        return descuento;
     }
 
     public abstract double getPrecioFinal();
 
-    public void aplicarDescuento(double descuentoAplicado) throws DescuentoInvalidoException{
-        if (descuentoAplicado >= 0) {
-            this.descuentoAplicado = descuentoAplicado;
+    public void aplicarDescuento(double descuento) throws DescuentoInvalidoException{
+        if (descuento >= 0) {
+            this.descuento = descuento;
         }else {
             throw new DescuentoInvalidoException();
         }
