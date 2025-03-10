@@ -2,7 +2,7 @@ package ProgramaNominas;
 
 import java.util.Scanner;
 
-public class Main {
+public class GestorNominas {
     public static void main(String[] args) {
         double antiguedad = 0;
         Scanner scn = new Scanner(System.in);
@@ -86,7 +86,7 @@ public class Main {
         double contingenciasComunes = 0;
 
         if (bccc > minimoBccc && bccc < maximoBccc){
-            contingenciasComunes = bccc * 4.70 / 100;
+            contingenciasComunes = bccc * 4.70 / 100; //actualmente es 4.83, pero haremos los ejercicios con 4,70
         }else if(bccc < minimoBccc){
             contingenciasComunes = minimoBccc * 4.70 / 100;
         }else if(bccc < maximoBccc){
