@@ -19,17 +19,17 @@ public class GestorNominas {
 
         int respuesta = scn.nextInt();
 
-        if (respuesta == 1){
+        if (respuesta == 1) {
             System.out.println("Antigüedad (porcentaje):");
             double antiguedadPorcentaje = scn.nextDouble();
 
             System.out.println("Antigüedad (cantidad):");
             double antiguedadCantidad = scn.nextDouble();
-            antiguedad = salarioBase * (antiguedadPorcentaje/100 * antiguedadCantidad);
-        }else if (respuesta == 2){
+            antiguedad = salarioBase * (antiguedadPorcentaje / 100 * antiguedadCantidad);
+        } else if (respuesta == 2) {
             System.out.println("Antgüedad(numnero)");
             antiguedad = scn.nextDouble();
-        }else {
+        } else {
 
         }
 
@@ -67,7 +67,7 @@ public class GestorNominas {
 
         System.out.println("Pagas extra: ");
         double pagaExtra = scn.nextDouble();
-        double prorrateoPE = pagaExtra*(salarioBase + antiguedad)/12;
+        double prorrateoPE = pagaExtra * (salarioBase + antiguedad) / 12;
 
         System.out.println("Prorrateo PE = " + prorrateoPE);
 
@@ -77,11 +77,34 @@ public class GestorNominas {
 
         System.out.println("BCCC = " + bccc);
 
-        System.out.println("Rango minimo BCCC: ");
-        double minimoBccc = scn.nextDouble();
+        double minimoBccc = 0;
+        double maximoBccc = 0;
+        boolean nValido = true;
+        do {
 
-        System.out.println("Rango maximo BCCC: ");
-        double maximoBccc = scn.nextDouble();
+                try {
+                    Scanner sc = new Scanner(System.in);
+
+                    System.out.println("Rango minimo BCCC: ");
+                    minimoBccc = sc.nextDouble();
+
+                    System.out.println("Rango maximo BCCC: ");
+                    maximoBccc = sc.nextDouble();
+
+                    if (!nValido){
+                        nValido = true;
+                    }
+
+                } catch (Exception e) {
+                    System.out.println("Número introducido incorrecto");
+                    nValido = false;
+                }
+
+        } while (!nValido);
+
+
+
+
 
         double contingenciasComunes = 0;
 
