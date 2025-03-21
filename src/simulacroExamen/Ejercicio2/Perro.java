@@ -14,8 +14,6 @@ public class Perro extends Animal{
     public void hacerSonido() {
         if (ladra){
             System.out.println("Guau");
-        }else {
-            System.out.println("");
         }
     }
     @Override

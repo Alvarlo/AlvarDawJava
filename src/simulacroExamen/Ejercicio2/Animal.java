@@ -10,7 +10,7 @@ public abstract class Animal {
         this.tipoAlimentacion = tipoAlimentacion;
         this.tieneCola = tieneCola;
     }
-    public void hacerSonido(){}
+    public abstract void hacerSonido();
 
-    public void moverse(){}
+    public abstract void moverse();
 }

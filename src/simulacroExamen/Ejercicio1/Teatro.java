@@ -13,20 +13,16 @@ public class Teatro {
             if (asientos[i] == null){
                 asientos[i] = new Asiento(fila,numero,precio,vip);
                 System.out.println("Se ha añadido el asiento");
-                break;
-            }else if (asientos[i] != null){
-                continue;
-            }else {
-                System.out.println("No se ha añadido ningún asiento");
+                return; //un return en una funcion void lo que hace es parar la funcion
             }
         }
+        System.out.println("No se ha añadido ningún asiento");
     }
     public void calcularPrecios(String diaSemana){
         for (int i = 0; i < asientos.length; i++) {
             if (asientos[i] != null){
-
                 System.out.print(asientos[i].toString());
-                System.out.println(" Precio = " + asientos[i].calcularPrecio(diaSemana));
+                System.out.println("Precio = " + asientos[i].calcularPrecio(diaSemana));
             }
         }
     }
